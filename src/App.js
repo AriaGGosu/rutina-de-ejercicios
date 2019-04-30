@@ -1,24 +1,34 @@
-import React from 'react';
+ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Rutina from "./pages/rutina.js";
+
+
 
 function App() {
+ const arrayNombres= ["kirby","link","king-k.rool"];
+
+    // const arrayObjetos= [
+    // pesona1={nombre:"kirby"},
+    // persona2={nombre:"link"},
+    // persona3={nombre:"king k. rool"}]
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+
+      <div className="body">
+        {arrayNombres.map(e=>{
+          return (
+            <div> 
+              <Rutina nameCharacter={e}/>
+            </div>
+          )
+        })
+      }
+      
+      </div>
     </div>
   );
 }
